@@ -27,16 +27,34 @@ hr {
   display: flex;
   flex-direction: column;
 }
-/* .app-content{
-  display: flex;
-} */
 
-.flex-col{
+.app-content {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 20%;
+  border-right: 1.5px solid #a9a9a9;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #f9f9f9;
+  overflow-y: auto;
+  min-height: 100vh;
+}
+
+.flex-col {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.cursor{
+.cursor {
   cursor: pointer;
 }
+
+/* Responsive Grid Layout for order item */

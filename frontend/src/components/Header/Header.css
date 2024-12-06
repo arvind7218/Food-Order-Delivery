@@ -1,53 +1,146 @@
-.header{
-    height: 34vw;
-    margin: 30px auto;
-    background: url('/header_img.png') no-repeat;
-    background-size: contain;
-    position: relative;
+/* Header container */
+.header {
+  height: 34vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  transition: background-image 1s ease-in-out; /* Smooth transition between images */
+  border-radius: 10px; /* Adds rounded corners */
+  overflow: hidden; /* Prevents content overflow in rounded corners */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); /* Subtle shadow for elegance */
+  animation: scrollBackground 20s linear infinite; /* Infinite scrolling of background image */
 }
-.header-contents{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 1.5vw;
-    max-width: 50%;
-    bottom: 10%;
-    left: 6vw;
-    animation: fadeIn 3s;
+
+/* Keyframes for scrolling background effect */
+@keyframes scrollBackground {
+  0% {
+    background-position: 100% 0; /* Start from right side */
+  }
+  100% {
+    background-position: -100% 0; /* End at the left side */
+  }
 }
-.header-contents h2{
-    font-weight: 500;
-    color: white;
-    font-size: max(4.5vw, 22px);
+
+/* Header contents */
+.header-contents {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the left */
+  gap: 1.2vw; /* Reduced spacing for better balance */
+  max-width: 50%;
+  bottom: 12%;
+  left: 6vw;
+  animation: slideIn 1s ease-out; /* Side slide-in animation */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Improves readability on bright backgrounds */
 }
-.header-contents p{
-    color: white;
-    font-size: 1vw;
+
+/* Header title styling */
+.header-contents h2 {
+  font-weight: bold; /* Enhanced font weight */
+  color: #521443; /* Soft pink color for the text */
+  text-shadow: 3px 3px 6px rgba(255, 99, 71, 0.7); /* Tomato-colored text shadow with slight blur */
+  font-size: max(4vw, 22px); /* Scales the font size based on viewport width */
+  line-height: 1.2; /* Ensures proper line spacing */
+  margin: 0; /* Removes default margin */
+  text-transform: uppercase; /* Makes the text uppercase */
+  letter-spacing: 2px; /* Adds spacing between letters for a modern feel */
 }
-.header-contents button{
-    border: none;
-    color: #747474;
-    font-weight: 500;
-    padding: 1vw 2.3vw;
-    background-color: white;
-    font-size: max(1vw,13px);
-    border-radius: 50px;
-    animation: fadeIn 1s;
+
+/* Header paragraph styling */
+.header-contents p {
+  color: #000000; /* Softer white for contrast with the background */
+  font-size: max(1.2vw, 14px); /* Dynamic font size with a minimum of 14px for readability */
+  line-height: 1.5; /* Improved readability with more spacing between lines */
+  margin: 0; /* Removes default margin */
+  text-align: justify; /* Justifies the text to create a clean block of text */
+  padding: 0.5vw 0; /* Adds slight vertical padding for spacing */
+  font-family: 'Arial', sans-serif; /* Sets a clean, modern sans-serif font */
+  letter-spacing: 0.5px; /* Slightly increases letter spacing for clarity */
 }
-@media (max-width:1050px){
-    .header-contents{
-        max-width: 45%;
-    }
+
+/* Button styling */
+.header-contents button {
+  border: none;
+  color: #333; /* Darker text for better contrast */
+  font-weight: 600; /* Slightly bolder text */
+  padding: 0.8vw 2vw; /* Adjusted padding for cleaner look */
+  background-color: #fff;
+  font-size: max(1vw, 14px);
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2); /* Subtle button shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added hover effect */
 }
-@media (max-width:750px){
-    .header-contents{
-        max-width: 65%;
-    }
-    .header-contents p{
-        display: none;
-    }
-    .header-contents button{
-        padding: 2vw 4vw;
-    }
+
+/* Button hover effect */
+.header-contents button:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Sliding effect on button hover */
+.header-contents button::after {
+  content: ''; /* Creates an empty pseudo-element */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: tomato; /* Color for the sliding effect */
+  transform: scaleX(0); /* Start with no scale */
+  transform-origin: bottom right; /* Slide from the bottom-right corner */
+  transition: transform 0.5s ease; /* Smooth sliding transition */
+  z-index: -1; /* Put the pseudo-element behind the content */
+}
+
+/* Show the sliding effect on hover */
+.header-contents button:hover::after {
+  transform: scaleX(1); /* Expand the pseudo-element to fill the button */
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 1050px) {
+  .header-contents {
+    max-width: 60%; /* Adjusted for smaller screens */
+  }
+  .header-contents h2 {
+    font-size: max(3vw, 18px); /* Scales title better */
+  }
+}
+
+@media (max-width: 750px) {
+  .header-contents {
+    max-width: 80%; /* Wider content for mobile */
+  }
+  .header-contents p {
+    font-size: 14px; /* Increased font size for readability */
+  }
+  .header-contents button {
+    padding: 1.2vw 3vw; /* More padding for touchscreens */
+  }
+  .header-contents h2 {
+    font-size: max(4vw, 20px);
+  }
+}
+
+@media (max-width: 500px) {
+  .header-contents p {
+    display: none; /* Remove paragraph for very small screens */
+  }
+  .header-contents h2 {
+    font-size: 16px;
+  }
+}
+
+/* Keyframes for sliding animation */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%); /* Start off-screen on the left */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* Slide in to the center */
+  }
 }

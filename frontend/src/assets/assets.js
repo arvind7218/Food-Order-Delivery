@@ -11,7 +11,6 @@ import menu_5 from './menu_5.png'
 import menu_6 from './menu_6.png'
 import menu_7 from './menu_7.png'
 import menu_8 from './menu_8.png'
-
 import food_1 from './food_1.png'
 import food_2 from './food_2.png'
 import food_3 from './food_3.png'
@@ -61,8 +60,19 @@ import bag_icon from './bag_icon.png'
 import logout_icon from './logout_icon.png'
 import parcel_icon from './parcel_icon.png'
 
+import burger from './burger.png'
+import veg_biriyani from './veg_biriyani.png'
+import paneer_burger from './paneer_burger.png'
+import company_logo from './company_logo.png'
+import footer_logo from './footer_logo.png'
+import arvind from './arvind.png'
+import arvind1 from './arvind1.png'
 export const assets = {
     logo,
+    arvind,
+    arvind1,
+    footer_logo,
+    company_logo,
     delivery_logo,
     basket_icon,
     header_img,
@@ -84,6 +94,8 @@ export const assets = {
     parcel_icon
 }
 
+export const headerImages = [veg_biriyani, paneer_burger, burger];
+  
 export const menu_list = [
     {
         menu_name: "Salad",

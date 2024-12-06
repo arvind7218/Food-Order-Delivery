@@ -1,6 +1,6 @@
 import express from "express";
 import authMiddleware from "../middleware/auth.js"; // Ensure the correct path and extension
-import { placeOrder, userOrders, verifyOrder } from "../controllers/orderController.js"; // Include the .js extension
+import { listOrders, placeOrder, userOrders, verifyOrder, updateStatus } from "../controllers/orderController.js"; // Include the .js extension
 
 const orderRouter = express.Router();
 
@@ -8,5 +8,7 @@ const orderRouter = express.Router();
 orderRouter.post("/place", authMiddleware, placeOrder);
 orderRouter.post("/verify",verifyOrder);
 orderRouter.post("/userorders",authMiddleware,userOrders);
+orderRouter.get("/list",listOrders);
+orderRouter.post("/status",updateStatus);
 
 export default orderRouter;

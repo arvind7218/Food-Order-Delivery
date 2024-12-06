@@ -6,8 +6,8 @@ const Footer = () => {
         <div className='footer' id='footer'>
             <div className="footer-content">
                 <div className="footer-content-left">
-                    <img src={assets.logo} alt="" />
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, maiores labore! Aspernatur rem alias, ut nesciunt placeat, dignissimos reprehenderit molestiae, asperiores sapiente voluptatibus cumque ipsum totam quae modi explicabo? Tenetur.</p>
+                    <img src={assets.footer_logo} alt="" />
+                    <p>FoodExpress is committed to delivering fresh, delicious meals right to your doorstep. With a focus on speed, convenience, and quality, we bring you a seamless food ordering experience, whether you're at home, at the office, or on the go.</p>
                     <div className="footer-social-icons">
                         <img src={assets.facebook_icon} alt="" />
                         <img src={assets.twitter_icon} alt="" />
@@ -27,12 +27,12 @@ const Footer = () => {
                      <h2>GET IN TOUCH</h2>
                      <ul>
                         <li>+91-1234567890</li>
-                        <li>contact@br29gaire.com</li>
+                        <li>contact@foodExpress.com</li>
                      </ul>
                 </div>
             </div>
             <hr />
-            <p className="footer-copyright">Copyright 2024 @ br29gaire.com - All Right Reserved.</p>
+            <p className="footer-copyright">Copyright 2024 @ foodExpress.com - All Right Reserved.</p>
         </div>
     )
 }

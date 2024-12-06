@@ -1,0 +1,148 @@
+.developer-profile-container {
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .profiles-heading {
+    font-size: 42px;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+  }
+  
+  .profiles-heading::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 4px;
+    background-color: #007bff;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .developer-profiles-container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .developer-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #e2e2e2;
+    border-radius: 15px;
+    background-color: #f9f9f9;
+    max-width: 320px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+  }
+  
+  .developer-profile:hover {
+    transform: scale(1.05);
+  }
+  
+  .developer-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .developer-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .developer-details h2 {
+    margin: 0;
+    font-size: 28px;
+    color: #333;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .developer-details h2:hover {
+    color: #007bff; /* Change color on hover */
+  }
+  
+  .developer-designation {
+    font-size: 18px;
+    color: #666;
+    margin: 5px 0;
+    font-style: italic;
+  }
+  
+  .developer-description {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 10px;
+    font-weight: 400;
+    max-width: 320px;
+  }
+  
+  /* Social media links styling */
+  .social-links {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social-icon {
+    font-size: 24px;
+    color: #007bff;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    color: #0056b3; /* Darker blue on hover */
+  }
+  
+  @media (max-width: 768px) {
+    .profiles-heading {
+      font-size: 32px;
+    }
+  
+    .developer-profile {
+      max-width: 100%;
+      padding: 20px;
+    }
+  
+    .developer-photo {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .developer-details h2 {
+      font-size: 22px;
+    }
+  
+    .developer-designation {
+      font-size: 16px;
+    }
+  
+    .developer-description {
+      font-size: 14px;
+    }
+  
+    .social-icon {
+      font-size: 20px;
+    }
+  }
+  
