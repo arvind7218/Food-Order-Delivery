@@ -3,7 +3,7 @@ import './developerProfile.css';
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'; // Import social media icons
 
 // Importing developer photos from assets folder
-import developerPhoto1 from '../../assets/menu_1.png';
+import developerPhoto1 from '../../assets/indrajeet.png';
 import developerPhoto2 from '../../assets/arvind.png';  // Assume this is a different image
 
 const DeveloperProfile = () => {
