@@ -67,10 +67,14 @@ import company_logo from './company_logo.png'
 import footer_logo from './footer_logo.png'
 import arvind from './arvind.png'
 import arvind1 from './arvind1.png'
+import arvind2 from './arvind2.png'
+import indrajeet from './indrajeet.png'
 export const assets = {
     logo,
+    indrajeet,
     arvind,
     arvind1,
+    arvind2,
     footer_logo,
     company_logo,
     delivery_logo,
