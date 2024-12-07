@@ -163,11 +163,11 @@
 
   /* Hide profile dropdown and sign in button on mobile */
   .navbar-profile {
-    display: none;
+    display: block;
   }
 
   .navbar-right button {
-    display: none;
+    display: block;
   }
 
   /* Show only cart icon */
