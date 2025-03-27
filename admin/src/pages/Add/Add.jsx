@@ -60,12 +60,12 @@ const Add = ({url}) => {
           <input onChange={onChangeHandler} value={data.name} type="text" name='name' placeholder='Type here' />
         </div>
         <div className="add-product-description flex-col">
-          <p>Project description</p>
+          <p>Product description</p>
           <textarea onChange={onChangeHandler} value={data.description} name="description" rows="6" placeholder='Write content here' required></textarea>
         </div>
         <div className="add-category-price">
           <div className="add-category flex-col">
-            <p>Project category</p>
+            <p>Product category</p>
             <select onChange={onChangeHandler} name="category">
               <option value="Salad">Salad</option>
               <option value="Rolls">Rolls</option>
