@@ -11,7 +11,7 @@ const placeOrder = async (req, res) => {
   try {
     // Calculate the total amount of the order from the items
     const totalAmount = req.body.items.reduce((acc, item) => acc + item.price * item.quantity, 0);
-    const deliveryCharges = 2; // Fixed delivery charges
+    const deliveryCharges = 9; // Fixed delivery charges
     const grandTotal = totalAmount + deliveryCharges;
 
     // Create new order in the database
@@ -34,7 +34,7 @@ const placeOrder = async (req, res) => {
         product_data: {
           name: item.name
         },
-        unit_amount: item.price * 100 * 80 // Convert to cents/paise and apply conversion factor
+        unit_amount: item.price * 100 // Convert to cents/paise and apply conversion factor
       },
       quantity: item.quantity
     }));
@@ -46,12 +46,12 @@ const placeOrder = async (req, res) => {
         product_data: {
           name: "Delivery Charges"
         },
-        unit_amount: deliveryCharges * 100 * 80 // Convert to paise (assuming 1 INR = 80 paise)
+        unit_amount: deliveryCharges * 100 // Convert to paise (assuming 1 INR = 80 paise)
       },
       quantity: 1
     });
 
-    // Create Stripe checkout session
+    // Create Stripe checkout session 
     const session = await stripe.checkout.sessions.create({
       line_items: line_items,
       mode: 'payment',
@@ -80,7 +80,7 @@ const verifyOrder = async (req, res) => {
       })
     }
     else {
-      await orderModel.findByIdAndDelete(orderId);
+      await orderModel.findByIdAndDelete(orderId);   
       res.json({
         success: false,
         message: "Not Paid"
@@ -145,7 +145,7 @@ const updateStatus = async (req, res) => {
   } catch (error) {
     console.log(error);
     res.json({
-      sucess: false,
+      success: false,
       message: "Error"
     })
 
