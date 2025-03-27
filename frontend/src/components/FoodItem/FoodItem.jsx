@@ -7,7 +7,14 @@ const FoodItem = ({ id, name, price, description, image }) => {
     const { cartItems, addToCart, removeFromCart, url } = useContext(StoreContext);
 
     // Debugging: log the image URL
-    const imageUrl = url + "/images/" + image;
+    const imageUrl = image.startsWith("http") ? image : `${url}/images/${image}`;
+
+    console.log("Backend URL:", url);
+console.log("Image filename:", image);
+console.log("Generated Image URL:", imageUrl);
+
+
+
 
     return (
         <div className="food-item">
